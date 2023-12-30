@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Choose a font similar to the one on the website */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff; /* Adjust color as needed */
+    padding: 10px 20px; /* Adjust padding to match the spacing on the website */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+.logo img {
+    height: 50px; /* Adjust size as needed */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px; /* Space between menu items */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333333; /* Adjust link color as needed */
+    font-weight: bold; /* Optional: if you want bold text */
+}
+
+.cta {
+    background-color: #007bff; /* Adjust button color as needed */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px; /* Optional: if you want rounded corners */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .nav-links {
+        display: none; /* Hide links on small screens */
+    }
+    /* Add styles for a menu icon if needed */
+}
