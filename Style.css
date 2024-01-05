@@ -1,64 +1,200 @@
+/* General */
+
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Updated font family */
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+}
+
+.purple {
+color: #6415ff;
+}
+
+
+/* Nav */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 40px; /* You can adjust this as needed */
+  margin-right: 10px;
+}
+
+.logo-container h2 {
+  font-size: 1.5rem; /* Adjust size to match the image */
+  color: #6415ff; /* Adjust color to match the image */
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #4a4a4a; /* Updated color to match the image */
+  font-size: 1rem; /* Updated font size to match the image */
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #7b68ee; /* Hover color */
+}
+
+.login {
+  margin-right: 20px;
+  background: none;
+  border: none;
+  color: #5a36a4; /* Adjust the color to match the "Sign Up" button */
+  cursor: pointer;
+}
+
+.cta {
+  background-color: #6415ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.75rem 1.25rem; /* Adjust padding to match the image */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #5a36a4;
+}
+
+
+/* Landing */
+
+#landing {
+    display: flex;
+  }
+  
+  .column {
+    flex: 1; /* This will ensure that each column takes up an equal amount of space */
+    padding: 20px; /* This adds some space inside the columns */
+  }
+
+  .responsive-image {
+    width: 100%; /* Make the image take up 100% of its container's width */
+    height: auto; /* Set height to auto to maintain aspect ratio */
+    object-fit: contain; /* This will ensure the image fits nicely within the container, change to 'cover' if you want it to fill the container */
+  }
+
+  .input-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ccc; /* Light grey border */
+    border-radius: 50px; /* Larger border-radius for rounded corners */
+    padding-right: 0; /* No padding on the right to allow button to be fully rounded */
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  #email-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 10px 15px; /* Adjusted padding */
+    font-size: 16px; /* Adjust font-size as needed */
+    border-radius: 50px 0 0 50px; /* Only left corners rounded */
+    margin-right: -2px; /* Overlap the border between the input and button */
+  }
+  
+  #email-input::placeholder {
+    color: #aaa;
+  }
+  
+  #get-started-button {
+    padding: 10px 25px; /* Increased padding for a fully rounded button */
+    background-color: #6f42c1; /* Purple background */
+    color: white;
+    border: none;
+    border-radius: 50px; /* Fully rounded corners for the button */
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: none; /* No shadow for a flat design, add if needed */
+    transition: background-color 0.2s; /* Smooth transition for hover effect */
+  }
+  
+  /* This ensures the elements use the specified box-sizing */
+  .input-button-container * {
     box-sizing: border-box;
   }
   
-  nav {
+  /* Optional: Interaction styles */
+  #email-input:focus,
+  #get-started-button:hover {
+    border-color: #6f42c1; /* Match the border color with button background */
+  }
+  
+
+  /* Features */
+
+  #features {
+    text-align: center;
+    padding: 2rem;
+   
+  }
+  
+  .feature-heading h2 {
+    color: #6415ff; /* Purple text color for the heading */
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-heading p {
+    color: #6c757d; /* Grey text for the subtitle */
+    margin-bottom: 2rem;
+  }
+  
+  .features-grid {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #ffffff;
+    justify-content: space-around;
+    text-align: left;
   }
   
-  .logo-container {
-    display: flex; /* Flex container for logo and heading */
-    align-items: center; /* Center-align items vertically */
+  .feature-item {
+    width: 30%; /* Adjust the width as needed */
+    padding: 1rem;
   }
   
-  .logo-container img {
-    height: 40px;
-    margin-right: 10px; /* Space between logo and text */
+  .feature-item .icon {
+    font-size: 2rem; /* Large size for the emoji icons */
+    margin-bottom: 0.5rem;
   }
   
-  .nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+  .feature-item h3 {
+    color: #4a4a4a; /* Dark grey color for feature titles */
+    margin-bottom: 0.5rem;
   }
   
-  .nav-links li {
-    margin: 0 1rem;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-  
-  .nav-links li a {
-    text-decoration: none;
-    color: #343a40;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links li a:hover {
-    color: #007bff;
-  }
-  
-  .cta {
-    background-color: #6f42c1;
-    color: #ffffff;
-    border: none;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cta:hover {
-    background-color: #5a36a4;
+  .feature-item p {
+    color: #6c757d; /* Light grey color for the text */
+    font-size: 0.9rem;
   }
   
