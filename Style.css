@@ -525,3 +525,43 @@ nav {
     border-top: 5px solid #f44336; /* Color for enterprise tier */
   }
   
+
+  /* Testimonals */
+  .testimonial-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #f8f8f8;
+  }
+  .testimonial-image {
+    flex: 1;
+    text-align: center;
+  }
+  .testimonial-content {
+    flex: 1;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 20px;
+    color: #555;
+  }
+  .testimonial-navigation {
+    text-align: center;
+  }
+  .testimonial-navigation button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius:50%
+  }
+  .testimonial-navigation button:hover {
+    background-color: #0056b3;
+  }
