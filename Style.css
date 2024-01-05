@@ -166,4 +166,49 @@ nav {
         text-align: center;
         width: 50%; /* or any width you want */
       }
+
+      #features {
+        text-align: center;
+        padding: 4rem 0;
+      }
+      
+      .features-grid {
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        flex-wrap: wrap; /* Wraps items to the next line on smaller screens */
+      }
+      
+      .feature-item {
+        flex-basis: calc(33.333% - 40px); /* Subtracts the margin from the width */
+        margin: 20px; /* Adds space between the columns */
+        text-align: center;
+      }
+      
+      .icon-container {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        /* Style the icon container if needed */
+      }
+      
+      .feature-icon {
+        height: 64px; /* or your preferred size */
+        width: 64px; /* or your preferred size */
+      }
+      
+      .feature-title {
+        color: #6415ff;
+        margin-bottom: 0.5rem;
+      }
+      
+      .feature-description {
+        color: #6c757d;
+        margin-bottom: 1rem;
+      }
+      
+      @media (max-width: 768px) {
+        .feature-item {
+          flex-basis: 100%; /* Stacks the items on top of each other on smaller screens */
+        }
+      }
       
