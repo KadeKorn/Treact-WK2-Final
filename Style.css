@@ -203,11 +203,13 @@ nav {
   margin-right: auto;
   text-align: center;
   width: 50%; /* or any width you want */
+  margin-bottom: 50px;
 }
 
 #features {
   text-align: center;
   padding: 4rem 0;
+  margin-bottom: 20px;
 }
 
 .features-grid {
@@ -220,28 +222,34 @@ nav {
 .feature-item {
   flex-basis: calc(33.333% - 40px); /* Subtracts the margin from the width */
   margin: 20px; /* Adds space between the columns */
-  text-align: center;
+  text-align: left;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .icon-container {
-  
+  display: inline-block;
   margin-bottom: 0.5rem;
-  /* Style the icon container if needed */
+  flex-shrink: 0;
+  margin-right: 20px;
 }
+
 
 .feature-icon {
   height: 1.5rem; /* or your preferred size */
   width: 1.5rem; /* or your preferred size */
   border: solid 1px lightgrey;
   border-radius: 99999px;
-  padding: 20px;
+  padding: 15px;
 }
 
+.text-container {
+    text-align: left; /* Align the text to the left */
+  }
+
 .feature-title {
-  color: #6415ff;
+  color: #243e63;
   margin-bottom: 0.5rem;
 }
 
