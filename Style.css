@@ -242,6 +242,7 @@ nav {
   border: solid 1px lightgrey;
   border-radius: 99999px;
   padding: 15px;
+  margin-top: 20px;
 }
 
 .text-container {
@@ -271,6 +272,7 @@ nav {
   align-items: center; /* Aligns the content of both columns vertically */
   justify-content: space-between; /* Spaces out the columns */
   padding: 2rem;
+  margin-top:120px;
 }
 
 #quality-work .text-column {
@@ -300,6 +302,8 @@ nav {
   width: 100%; /* Ensures the image is responsive */
   height: auto; /* Maintains the aspect ratio of the image */
   max-width: 500px; /* Maximum size of the image */
+  border:#ccc solid 1px ;
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
