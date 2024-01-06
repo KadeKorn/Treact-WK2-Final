@@ -146,11 +146,11 @@ nav {
   margin: auto;
   margin-bottom: 2.5rem;
   margin-top: 2.25rem;
-  transition: border-color 0.3s ease
+  transition: border-color 0.3s ease;
 }
 .input-button-container:hover {
-    border-color: #7e7777; /* Increase the border width on hover */
-  }
+  border-color: #7e7777; /* Increase the border width on hover */
+}
 
 #email-input {
   flex-grow: 1;
@@ -181,8 +181,8 @@ nav {
 }
 
 #get-started-button:hover {
-    background-color: #5600cc; /* Change the background color on hover to #5600cc */
-  }
+  background-color: #5600cc; /* Change the background color on hover to #5600cc */
+}
 
 /* This ensures the elements use the specified box-sizing */
 .input-button-container * {
@@ -235,7 +235,6 @@ nav {
   margin-right: 20px;
 }
 
-
 .feature-icon {
   height: 1.5rem; /* or your preferred size */
   width: 1.5rem; /* or your preferred size */
@@ -246,8 +245,8 @@ nav {
 }
 
 .text-container {
-    text-align: left; /* Align the text to the left */
-  }
+  text-align: left; /* Align the text to the left */
+}
 
 .feature-title {
   color: #243e63;
@@ -272,7 +271,7 @@ nav {
   align-items: center; /* Aligns the content of both columns vertically */
   justify-content: space-between; /* Spaces out the columns */
   padding: 2rem;
-  margin-top:120px;
+  margin-top: 120px;
 }
 
 #quality-work .text-column {
@@ -302,7 +301,7 @@ nav {
   width: 100%; /* Ensures the image is responsive */
   height: auto; /* Maintains the aspect ratio of the image */
   max-width: 500px; /* Maximum size of the image */
-  border:#ccc solid 1px ;
+  border: #ccc solid 1px;
   border-radius: 4px;
 }
 
@@ -328,16 +327,20 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
+  margin-top: 180px;
 }
 
 .container {
   max-width: 1200px; /* or the max-width you desire */
   margin: auto; /* centers the container */
   display: flex;
+  align-items: center; /* This will vertically center the children */
+  justify-content: center;
 }
 
 .image-column {
   flex: 1;
+  margin-right: 20px;
   text-align: center; /* Center the image within the column */
 }
 
@@ -351,18 +354,36 @@ nav {
   padding-left: 2rem; /* Adds space between the columns */
 }
 
+/* Adjusted the h2 style */
 .text-column h2 {
   color: #6415ff; /* Your chosen color for the title */
   margin-bottom: 1rem;
 }
 
-.text-column .step h3 {
-  color: #6415ff; /* Your chosen color for the step numbers */
-  margin-bottom: 0.5rem;
+/* New styles for the steps */
+.text-column .step {
+  display: flex;
+  align-items: center; /* Align the number and the text vertically */
+  margin-bottom: 1rem; /* Space between each step */
 }
 
-.text-column .step p {
-  color: #6c757d; /* Your chosen color for the step description */
+.text-column .step .step-number {
+  font-size: 2.5rem; /* Larger font size for the number */
+  color: #cbd5e0; /* Grey color for the number */
+  margin-right: 1.5rem; /* Space between the number and the text */
+  font-weight: bold;
+  width: 50px; /* Fixed width for alignment */
+}
+
+.text-column .step .step-text h3 {
+  color: #243e63; /* Adjusted color for the step titles */
+  margin: 0; /* Remove margins for proper alignment */
+  font-size: 20px; /* Adjust size as needed */
+}
+
+.text-column .step .step-text p {
+  color: #718096; /* Adjusted color for the step description */
+  margin-top: 12px;
 }
 
 @media (max-width: 768px) {
@@ -374,6 +395,20 @@ nav {
   #get-started .image-column {
     flex-basis: 100%;
     padding: 1rem 0;
+  }
+
+  /* Adjusted styles for steps on smaller screens */
+  .text-column .step {
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the left */
+  }
+
+  .text-column .step .step-number {
+    margin-bottom: 0.5rem; /* Adds space between the number and title */
+  }
+
+  .text-column .step .step-text {
+    align-items: flex-start; /* Aligns text to the left */
   }
 }
 
