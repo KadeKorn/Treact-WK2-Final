@@ -16,8 +16,8 @@ body {
 }
 
 h4 {
-  color: #a0a0a0; /* Subdued text color for subtitle */
-  font-weight: normal;
+  color: #6415ff; /* Subdued text color for subtitle */
+  font-weight: bold;
 }
 
 h1 {
@@ -167,8 +167,6 @@ nav {
   color: #aaa;
 }
 
-
-
 #get-started-button {
   padding: 10px 25px; /* Increased padding for a fully rounded button */
   background-color: #6415ff; /* Purple background */
@@ -194,7 +192,7 @@ nav {
 /* Optional: Interaction styles */
 #email-input:focus,
 #get-started-button:hover {
-  border-color: #6f42c1; /* Match the border color with button background */
+  border-color: #6415ff; /* Match the border color with button background */
 }
 
 /* Features */
@@ -223,17 +221,23 @@ nav {
   flex-basis: calc(33.333% - 40px); /* Subtracts the margin from the width */
   margin: 20px; /* Adds space between the columns */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .icon-container {
-  display: inline-block;
+  
   margin-bottom: 0.5rem;
   /* Style the icon container if needed */
 }
 
 .feature-icon {
-  height: 64px; /* or your preferred size */
-  width: 64px; /* or your preferred size */
+  height: 1.5rem; /* or your preferred size */
+  width: 1.5rem; /* or your preferred size */
+  border: solid 1px lightgrey;
+  border-radius: 99999px;
+  padding: 20px;
 }
 
 .feature-title {
