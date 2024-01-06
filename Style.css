@@ -8,11 +8,27 @@ body {
 }
 
 .purple {
-color: #6415ff;
+  color: #6415ff;
 }
 
 .lightgrey {
-color: #7c8ba1;
+  color: #7c8ba1;
+}
+
+h4 {
+  color: #a0a0a0; /* Subdued text color for subtitle */
+  font-weight: normal;
+}
+
+h1 {
+  color: #303030; /* Dark text color for main title */
+  margin: 2.5rem 0;
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.125rem;
+  color: #243e63;
 }
 
 /* Nav */
@@ -23,21 +39,27 @@ nav {
   align-items: center;
   padding: 1rem 2rem;
   background-color: #ffffff;
+  margin-bottom: 4rem;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
 }
+.logo-container :hover {
+  color: #6415ff;
+}
 
 .logo-container img {
   height: 40px; /* You can adjust this as needed */
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .logo-container h2 {
   font-size: 1.5rem; /* Adjust size to match the image */
-  color: #6415ff; /* Adjust color to match the image */
+  color: #243e63; /* Adjust color to match the image */
+  cursor: pointer;
 }
 
 .nav-menu {
@@ -58,25 +80,28 @@ nav {
 
 .nav-links li a {
   text-decoration: none;
-  color: #4a4a4a; /* Updated color to match the image */
-  font-size: 1rem; /* Updated font size to match the image */
-  transition: color 0.3s ease;
+  color: #243e63;
+  font-size: 1rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Add transition for border-bottom */
+  border-bottom: 2px solid transparent; /* Initially set the border to transparent */
 }
 
 .nav-links li a:hover {
-  color: #7b68ee; /* Hover color */
+  color: #6415ff;
+  border-bottom: 2px solid #6415ff; /* Make the border thicker and match the hover color */
 }
 
 .login {
-  margin-right: 20px;
+  margin-left: 28px;
   background: none;
   border: none;
-  color: #5a36a4; /* Adjust the color to match the "Sign Up" button */
+  color: #6415ff; /* Adjust the color to match the "Sign Up" button */
   cursor: pointer;
 }
 
 .cta {
   background-color: #6415ff;
+  width: 125px;
   color: #ffffff;
   border: none;
   border-radius: 20px;
@@ -87,481 +112,447 @@ nav {
 }
 
 .cta:hover {
-  background-color: #5a36a4;
+  background-color: #5600cc;
 }
-
 
 /* Landing */
 
 #landing {
-    display: flex;
-  }
-  
-  .column {
-    flex: 1; /* This will ensure that each column takes up an equal amount of space */
-    padding: 20px; /* This adds some space inside the columns */
+  display: flex;
+}
+
+.column {
+  flex: 2; /* Change to 2 for 60% width */
+}
+
+.column:nth-child(1) {
+  flex: 1; /* Change to 1 for 40% width */
+}
+
+.responsive-image {
+  width: 100%; /* Make the image take up 100% of its container's width */
+  height: auto; /* Set height to auto to maintain aspect ratio */
+  object-fit: contain; /* This will ensure the image fits nicely within the container, change to 'cover' if you want it to fill the container */
+}
+
+.input-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc; /* Light grey border */
+  border-radius: 50px; /* Larger border-radius for rounded corners */
+  padding-right: 0; /* No padding on the right to allow button to be fully rounded */
+  max-width: 25rem;
+  margin: auto;
+  margin-bottom: 2.5rem;
+  margin-top: 2.25rem;
+  transition: border-color 0.3s ease
+}
+.input-button-container:hover {
+    border-color: #7e7777; /* Increase the border width on hover */
   }
 
-  .responsive-image {
-    width: 100%; /* Make the image take up 100% of its container's width */
-    height: auto; /* Set height to auto to maintain aspect ratio */
-    object-fit: contain; /* This will ensure the image fits nicely within the container, change to 'cover' if you want it to fill the container */
+#email-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 10px 15px; /* Adjusted padding */
+  font-size: 16px; /* Adjust font-size as needed */
+  border-radius: 50px 0 0 50px; /* Only left corners rounded */
+  margin-right: -2px; /* Overlap the border between the input and button */
+  transition: border-color 0.3s ease;
+}
+
+#email-input::placeholder {
+  color: #aaa;
+}
+
+
+
+#get-started-button {
+  padding: 10px 25px; /* Increased padding for a fully rounded button */
+  background-color: #6415ff; /* Purple background */
+  margin: 3px;
+  color: white;
+  border: none;
+  border-radius: 50px; /* Fully rounded corners for the button */
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: none; /* No shadow for a flat design, add if needed */
+  transition: background-color 0.2s; /* Smooth transition for hover effect */
+}
+
+#get-started-button:hover {
+    background-color: #5600cc; /* Change the background color on hover to #5600cc */
   }
 
-  .input-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #ccc; /* Light grey border */
-    border-radius: 50px; /* Larger border-radius for rounded corners */
-    padding-right: 0; /* No padding on the right to allow button to be fully rounded */
-    max-width: 500px;
-    margin: auto;
-  }
-  
-  #email-input {
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    padding: 10px 15px; /* Adjusted padding */
-    font-size: 16px; /* Adjust font-size as needed */
-    border-radius: 50px 0 0 50px; /* Only left corners rounded */
-    margin-right: -2px; /* Overlap the border between the input and button */
-  }
-  
-  #email-input::placeholder {
-    color: #aaa;
-  }
-  
-  #get-started-button {
-    padding: 10px 25px; /* Increased padding for a fully rounded button */
-    background-color: #6f42c1; /* Purple background */
-    color: white;
-    border: none;
-    border-radius: 50px; /* Fully rounded corners for the button */
-    cursor: pointer;
-    font-size: 16px;
-    box-shadow: none; /* No shadow for a flat design, add if needed */
-    transition: background-color 0.2s; /* Smooth transition for hover effect */
-  }
-  
-  /* This ensures the elements use the specified box-sizing */
-  .input-button-container * {
-    box-sizing: border-box;
-  }
-  
-  /* Optional: Interaction styles */
-  #email-input:focus,
-  #get-started-button:hover {
-    border-color: #6f42c1; /* Match the border color with button background */
-  }
-  
+/* This ensures the elements use the specified box-sizing */
+.input-button-container * {
+  box-sizing: border-box;
+}
 
-  /* Features */
+/* Optional: Interaction styles */
+#email-input:focus,
+#get-started-button:hover {
+  border-color: #6f42c1; /* Match the border color with button background */
+}
 
-  .center-text {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        width: 50%; /* or any width you want */
-      }
+/* Features */
 
-      #features {
-        text-align: center;
-        padding: 4rem 0;
-      }
-      
-      .features-grid {
-        display: flex;
-        justify-content: space-around;
-        align-items: start;
-        flex-wrap: wrap; /* Wraps items to the next line on smaller screens */
-      }
-      
-      .feature-item {
-        flex-basis: calc(33.333% - 40px); /* Subtracts the margin from the width */
-        margin: 20px; /* Adds space between the columns */
-        text-align: center;
-      }
-      
-      .icon-container {
-        display: inline-block;
-        margin-bottom: 0.5rem;
-        /* Style the icon container if needed */
-      }
-      
-      .feature-icon {
-        height: 64px; /* or your preferred size */
-        width: 64px; /* or your preferred size */
-      }
-      
-      .feature-title {
-        color: #6415ff;
-        margin-bottom: 0.5rem;
-      }
-      
-      .feature-description {
-        color: #6c757d;
-        margin-bottom: 1rem;
-      }
-      
-      @media (max-width: 768px) {
-        .feature-item {
-          flex-basis: 100%; /* Stacks the items on top of each other on smaller screens */
-        }
-      }
-      
+.center-text {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 50%; /* or any width you want */
+}
 
-      /* Quality Work */
-      
-      #quality-work {
-        display: flex;
-        align-items: center; /* Aligns the content of both columns vertically */
-        justify-content: space-between; /* Spaces out the columns */
-        padding: 2rem;
-      }
-      
-      #quality-work .text-column {
-        flex-basis: 50%; /* Takes up half the width of the container */
-        padding-right: 2rem; /* Adds some space between the text and the image */
-      }
-      
-      #quality-work h2 {
-        color: #6415ff; /* Adjust the color to match your brand */
-      }
-      
-      #quality-work .learn-more-button {
-        background-color: #6415ff; /* Button color */
-        color: white; /* Text color */
-        padding: 1rem 2rem; /* Button padding */
-        text-decoration: none; /* Removes underline from links */
-        border-radius: 20px; /* Rounded corners for the button */
-        display: inline-block; /* Allows padding and border-radius to take effect */
-        margin-top: 1rem; /* Space above the button */
-      }
-      
-      #quality-work .image-column {
-        flex-basis: 50%; /* Takes up half the width of the container */
-      }
-      
-      #quality-work .responsive-image {
-        width: 100%; /* Ensures the image is responsive */
-        height: auto; /* Maintains the aspect ratio of the image */
-        max-width: 500px; /* Maximum size of the image */
-      }
-      
-      @media (max-width: 768px) {
-        #quality-work {
-          flex-direction: column; /* Stacks the columns on top of each other on smaller screens */
-        }
-      
-        #quality-work .text-column, #quality-work .image-column {
-          flex-basis: 100%; /* Allows each column to take the full width of the container */
-          padding: 1rem 0; /* Adjusts padding for a vertical layout */
-        }
-      
-        #quality-work .responsive-image {
-          max-width: 100%; /* Allows the image to scale down on smaller screens */
-        }
-      }
+#features {
+  text-align: center;
+  padding: 4rem 0;
+}
 
-      /* Quality Work */
-      #get-started {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 2rem;
-       
-      }
-      
-      .container {
-        max-width: 1200px; /* or the max-width you desire */
-        margin: auto; /* centers the container */
-        display: flex;
-      }
-      
-      .image-column {
-        flex: 1;
-        text-align: center; /* Center the image within the column */
-      }
-      
-      .feature-image {
-        max-width: 100%;
-        height: auto;
-      }
-      
-      .text-column {
-        flex: 1;
-        padding-left: 2rem; /* Adds space between the columns */
-      }
-      
-      .text-column h2 {
-        color: #6415ff; /* Your chosen color for the title */
-        margin-bottom: 1rem;
-      }
-      
-      .text-column .step h3 {
-        color: #6415ff; /* Your chosen color for the step numbers */
-        margin-bottom: 0.5rem;
-      }
-      
-      .text-column .step p {
-        color: #6c757d; /* Your chosen color for the step description */
-      }
-      
-      @media (max-width: 768px) {
-        #get-started .container {
-          flex-direction: column-reverse; /* Image will stack on top on smaller screens */
-        }
-      
-        #get-started .text-column, #get-started .image-column {
-          flex-basis: 100%;
-          padding: 1rem 0;
-        }
-      }
+.features-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-wrap: wrap; /* Wraps items to the next line on smaller screens */
+}
 
-      /* VALUES */
-      
-      #values {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 50px 10%;
-        background-color: #f8f9fa; /* Adjust the background color as needed */
-      }
-      
-      .content-container {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        width: 100%;
-      }
-      
-      .text-container {
-        flex-basis: 50%;
-      }
-      
-      h4 {
-        color: #a0a0a0; /* Subdued text color for subtitle */
-        font-weight: normal;
-      }
-      
-      h1 {
-        color: #303030; /* Dark text color for main title */
-        margin: 20px 0;
-      }
-      
-      .text-container p {
-        color: #606060; /* Dark text color for paragraph */
-        line-height: 1.6;
-      }
-      
-      .features {
-        margin: 20px 0;
-      }
-      
-      .feature {
-        display: flex;
-        align-items: center;
-      }
-      
-      .icon {
-        display: inline-block;
-        padding: 10px;
-        border-radius: 50%;
-        margin-right: 15px;
-        color: white; /* Icon color */
-        font-size: 24px; /* Icon size */
-      }
-      
-      .button {
-        display: inline-block;
-        background-color: #6415ff; /* Button background color */
-        color: white; /* Button text color */
-        padding: 10px 20px;
-        border-radius: 20px; /* Rounded corners for the button */
-        text-decoration: none; /* Removes underline from link */
-        margin-top: 20px;
-      }
-      
-      .image-container {
-        flex-basis: 50%;
-        text-align: right; /* Aligns the image to the right */
-      }
-      
-      .image-container img {
-        max-width: 90%; /* Adjust the size as needed */
-        height: auto;
-      }
-      
-      @media (max-width: 768px) {
-        #values .content-container {
-          flex-direction: column;
-        }
-      
-        #values .text-container,
-        #values .image-container {
-          flex-basis: 100%;
-          text-align: center;
-        }
-      
-        #values .image-container {
-          order: -1; /* Image goes on top */
-        }
-      
-        #values .image-container img {
-          max-width: 100%;
-        }
-      }
-      
+.feature-item {
+  flex-basis: calc(33.333% - 40px); /* Subtracts the margin from the width */
+  margin: 20px; /* Adds space between the columns */
+  text-align: center;
+}
+
+.icon-container {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  /* Style the icon container if needed */
+}
+
+.feature-icon {
+  height: 64px; /* or your preferred size */
+  width: 64px; /* or your preferred size */
+}
+
+.feature-title {
+  color: #6415ff;
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .feature-item {
+    flex-basis: 100%; /* Stacks the items on top of each other on smaller screens */
+  }
+}
+
+/* Quality Work */
+
+#quality-work {
+  display: flex;
+  align-items: center; /* Aligns the content of both columns vertically */
+  justify-content: space-between; /* Spaces out the columns */
+  padding: 2rem;
+}
+
+#quality-work .text-column {
+  flex-basis: 50%; /* Takes up half the width of the container */
+  padding-right: 2rem; /* Adds some space between the text and the image */
+}
+
+#quality-work h2 {
+  color: #6415ff; /* Adjust the color to match your brand */
+}
+
+#quality-work .learn-more-button {
+  background-color: #6415ff; /* Button color */
+  color: white; /* Text color */
+  padding: 1rem 2rem; /* Button padding */
+  text-decoration: none; /* Removes underline from links */
+  border-radius: 20px; /* Rounded corners for the button */
+  display: inline-block; /* Allows padding and border-radius to take effect */
+  margin-top: 1rem; /* Space above the button */
+}
+
+#quality-work .image-column {
+  flex-basis: 50%; /* Takes up half the width of the container */
+}
+
+#quality-work .responsive-image {
+  width: 100%; /* Ensures the image is responsive */
+  height: auto; /* Maintains the aspect ratio of the image */
+  max-width: 500px; /* Maximum size of the image */
+}
+
+@media (max-width: 768px) {
+  #quality-work {
+    flex-direction: column; /* Stacks the columns on top of each other on smaller screens */
+  }
+
+  #quality-work .text-column,
+  #quality-work .image-column {
+    flex-basis: 100%; /* Allows each column to take the full width of the container */
+    padding: 1rem 0; /* Adjusts padding for a vertical layout */
+  }
+
+  #quality-work .responsive-image {
+    max-width: 100%; /* Allows the image to scale down on smaller screens */
+  }
+}
+
+/* Quality Work */
+#get-started {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1200px; /* or the max-width you desire */
+  margin: auto; /* centers the container */
+  display: flex;
+}
+
+.image-column {
+  flex: 1;
+  text-align: center; /* Center the image within the column */
+}
+
+.feature-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-column {
+  flex: 1;
+  padding-left: 2rem; /* Adds space between the columns */
+}
+
+.text-column h2 {
+  color: #6415ff; /* Your chosen color for the title */
+  margin-bottom: 1rem;
+}
+
+.text-column .step h3 {
+  color: #6415ff; /* Your chosen color for the step numbers */
+  margin-bottom: 0.5rem;
+}
+
+.text-column .step p {
+  color: #6c757d; /* Your chosen color for the step description */
+}
+
+@media (max-width: 768px) {
+  #get-started .container {
+    flex-direction: column-reverse; /* Image will stack on top on smaller screens */
+  }
+
+  #get-started .text-column,
+  #get-started .image-column {
+    flex-basis: 100%;
+    padding: 1rem 0;
+  }
+}
+
+/* VALUES */
+
+#values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 10%;
+  background-color: #f8f9fa; /* Adjust the background color as needed */
+}
+
+.content-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.text-container {
+  flex-basis: 50%;
+}
+
+.text-container p {
+  color: #606060; /* Dark text color for paragraph */
+  line-height: 1.6;
+}
+
+.features {
+  margin: 20px 0;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 15px;
+  color: white; /* Icon color */
+  font-size: 24px; /* Icon size */
+}
+
+.button {
+  display: inline-block;
+  background-color: #6415ff; /* Button background color */
+  color: white; /* Button text color */
+  padding: 10px 20px;
+  border-radius: 20px; /* Rounded corners for the button */
+  text-decoration: none; /* Removes underline from link */
+  margin-top: 20px;
+}
+
+.image-container {
+  flex-basis: 50%;
+  text-align: right; /* Aligns the image to the right */
+}
+
+.image-container img {
+  max-width: 90%; /* Adjust the size as needed */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  #values .content-container {
+    flex-direction: column;
+  }
+
+  #values .text-container,
+  #values .image-container {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  #values .image-container {
+    order: -1; /* Image goes on top */
+  }
+
+  #values .image-container img {
+    max-width: 100%;
+  }
+}
+
 /* Pricing */
 
 #pricing {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center-align the children horizontally */
-    padding: 2rem;
-    background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center-align the children horizontally */
+  padding: 2rem;
+  background-color: #f0f0f0;
 }
-  
-  .pricing-header {
-    text-align: center;
-    padding: 4rem 0; /* Adjust as needed */
-    background-color: #fff; /* Or any background color you prefer */
-  }
-  
-  .pricing-header h5 {
-    color: #a0a0a0; /* Subdued color for the small heading */
-    text-transform: uppercase; /* UPPERCASE lettering */
-    letter-spacing: 1px; /* Space out the letters a little */
-    margin-bottom: 10px; /* Space below the small heading */
-  }
-  
-  .pricing-header h1 {
-    color: #303030; /* Dark color for the main heading */
-    margin-bottom: 20px; /* Space below the main heading */
-    font-size: 2.5rem; /* Larger font size for emphasis */
-  }
-  
-  .pricing-header p {
-    color: #606060; /* Medium darkness for the paragraph */
-    max-width: 600px; /* Maximum width for readability */
-    margin-left: auto; /* Centers the paragraph */
-    margin-right: auto; /* Centers the paragraph */
-  }
- 
-  .pricing-card-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
-}
-  
-  .pricing-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 2rem;
-    margin: 1rem;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .pricing-card h2 {
-    color: #333;
-    margin-bottom: .5rem;
-  }
-  
-  .price {
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  .price span {
-    font-size: 1rem;
-  }
-  
-  .pricing-card p {
-    color: #666;
-    margin-bottom: 1rem;
-  }
-  
-  .pricing-card ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.5rem;
-  }
-  
-  .pricing-card ul li {
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  
-  .pricing-card button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-  
-  .pricing-card button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Specific styles for each card */
-  .personal {
-    border-top: 5px solid #4caf50; /* Color for personal tier */
-  }
-  
-  .business {
-    border-top: 5px solid #3f51b5; /* Color for business tier */
-  }
-  
-  .enterprise {
-    border-top: 5px solid #f44336; /* Color for enterprise tier */
-  }
-  
 
-  /* Testimonals */
-  .testimonial-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    background-color: #f8f8f8;
-  }
-  .testimonial-image {
-    flex: 1;
-    text-align: center;
-  }
-  .testimonial-content {
-    flex: 1;
-    padding: 20px;
-  }
-  h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  p {
-    margin-bottom: 20px;
-    color: #555;
-  }
-  .testimonial-navigation {
-    text-align: center;
-  }
-  .testimonial-navigation button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    border-radius:50%
-  }
-  .testimonial-navigation button:hover {
-    background-color: #0056b3;
-  }
+.pricing-header {
+  text-align: center;
+  padding: 4rem 0; /* Adjust as needed */
+  background-color: #fff; /* Or any background color you prefer */
+}
+
+.pricing-header h5 {
+  color: #a0a0a0; /* Subdued color for the small heading */
+  text-transform: uppercase; /* UPPERCASE lettering */
+  letter-spacing: 1px; /* Space out the letters a little */
+  margin-bottom: 10px; /* Space below the small heading */
+}
+
+.pricing-header h1 {
+  color: #303030; /* Dark color for the main heading */
+  margin-bottom: 20px; /* Space below the main heading */
+  font-size: 2.5rem; /* Larger font size for emphasis */
+}
+
+.pricing-header p {
+  color: #606060; /* Medium darkness for the paragraph */
+  max-width: 600px; /* Maximum width for readability */
+  margin-left: auto; /* Centers the paragraph */
+  margin-right: auto; /* Centers the paragraph */
+}
+
+.pricing-card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+.pricing-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1rem;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card h2 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 2rem;
+  color: #333;
+}
+
+.price span {
+  font-size: 1rem;
+}
+
+.pricing-card p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card ul li {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.pricing-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.pricing-card button:hover {
+  background-color: #0056b3;
+}
+
+/* Specific styles for each card */
+.personal {
+  border-top: 5px solid #4caf50; /* Color for personal tier */
+}
+
+.business {
+  border-top: 5px solid #3f51b5; /* Color for business tier */
+}
+
+.enterprise {
+  border-top: 5px solid #f44336; /* Color for enterprise tier */
+}
+
+/*  */
