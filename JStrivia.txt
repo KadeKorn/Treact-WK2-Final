@@ -1,0 +1,179 @@
+JS Trivia Questions
+
+1 - What’s the difference between “var” and “let”:
+Scope:
+var is function-scoped, meaning that when a variable is declared using var inside a function, it is only accessible within that function.
+let, on the other hand, is block-scoped. This means that a variable declared with let in a block (e.g., within curly braces {}) is only accessible within that block.
+Hoisting:
+Variables declared with var are hoisted to the top of their scope. This means that they can be used before they are declared, but their value will be undefined until their declaration line is executed.
+let declarations are also hoisted, but they are not initialized. Accessing a let variable before its declaration results in a ReferenceError.
+Re-declaration:
+Within the same scope, a variable declared with var can be re-declared.
+let does not allow re-declaring the same variable within the same scope.
+Global Object Property:
+A var declaration at the global level (outside any function) creates a new property on the global object (like window in a browser).
+let at the global level does not create a property on the global object.
+Creating Properties on Window Object:
+Variables declared with var become properties of the window object in a browser environment.
+Variables declared with let do not become properties of the window object.
+Use in Modern JavaScript:
+let is generally preferred in modern JavaScript development due to its block-scoped nature and its predictability in terms of hoisting and re-declaration.
+var is still used, particularly in older codebases, but is less predictable due to its function-scoped nature and hoisting behavior.
+
+
+2 - What’s the difference between “==” and “===”:
+	
+
+
+“==” and “===” are both comparison operators
+== compares values
+=== compares values and types
+
+
+Equality (==):
+The == operator is known as the "equality" or "abstract equality" operator.
+It compares two values for equality after performing type coercion if the types are different.
+Type coercion means that if you compare values of different types (like a number and a string), JavaScript will try to convert one or both of the values to a common type before making the comparison.
+For example, 0 == '0' will evaluate to true because the string '0' is coerced to the number 0 before comparison.
+Strict Equality (===):
+The === operator is known as the "strict equality" or "identity" operator.
+It compares both the value and the type of two variables.
+If the types of the two variables are different, the comparison immediately returns false, without attempting to convert (coerce) them to a common type.
+For example, 0 === '0' will evaluate to false because the number 0 is not the same type as the string '0'.
+
+
+What’s the difference between “let” and “const”:
+
+Let can be reassigned
+Const cannot be reassigned ( const arr = [1,2,3]. arr.push(4) that works because you are not reassigning it. Top Tech codebases use 90% const and 10% let
+Another example const obj = {a:1, b:2}; obj.c = 3; console.log(obj) = a:1, b:2, c:3 This is because you are not reassigning it
+
+Mutability:
+let allows you to declare variables that can be reassigned or mutated. For example, if you declare a variable using let, you can change its value later in your code.
+const, short for "constant", is used to declare variables whose values are not supposed to change. Once a variable is assigned using const, it cannot be reassigned. Attempting to do so will result in a runtime error.
+Scope:
+Both let and const are block-scoped, meaning that they are only accessible within the block (enclosed by curly braces {}) where they are declared.
+Hoisting:
+Like let, variables declared with const are hoisted to the top of their scope. However, they are not initialized, which means that trying to access them before their declaration results in a ReferenceError.
+Initialization:
+A key difference is that const requires that the variable be initialized at the time of declaration. You cannot declare a const variable without assigning it a value.
+With let, you can declare a variable without initializing it immediately.
+Use Cases:
+let is used when you expect the value of a variable to change. For example, counters in loops or values that will be reassigned later.
+const is used when you want to protect the variable from being reassigned, which is helpful for maintaining constants or ensuring that certain variables always hold the same value throughout the execution of your code.
+3 - What's the difference between “undefined” and “null”
+Undefined = an initialized variable without a value automatically gets a undefined ( let x; console.log (x) = undefined
+Null = Null is intentional and better practice to clean up a value. Devs know it was set intentionally
+
+Undefined:
+undefined is a type itself (undefined) and is the default value of variables that have been declared but not initialized. It means that the variable exists but has not yet been assigned a value.
+When you try to access an object property or array element that does not exist, the result is undefined.
+Functions that do not explicitly return a value will implicitly return undefined.
+undefined is also the value of function arguments that were not provided when the function was invoked.
+Null:
+null is an intentional absence of any object value. It is assigned to variables as a representation of no value.
+null is an object type (strange, but this is how JavaScript was originally defined), which technically means "nothing" or "no object".
+It's commonly used to signify the intentional absence of a value and must be assigned explicitly.
+Comparison:
+When comparing null and undefined with the abstract equality operator (==), they are considered equal. For example, null == undefined is true.
+However, when compared with the strict equality operator (===), they are not equal because they are of different types (null is an object, undefined is of type undefined). So, null === undefined is false.
+
+4 - How can you improve a web page’s performance?
+Optimize Images // You dont want your images being more than 100kb (compress your images)
+Lazy Load Images // Only load your images when you scroll down to them and they need to be seen
+Lazy load components // Only load the components you need ie when Looking at Canva (throttle slow 3g) if you click text it will then load or uploads etc
+Minify HTML, CSS, JavaScript // Minifying HTML, CSS, and JavaScript involves removing all unnecessary characters from the source code, such as whitespace, comments, and line breaks, without affecting functionality. This process reduces file size, leading to faster page load times and improved website performance. The minified code is more efficient to download and reduces the amount of data that needs to be transferred over the internet. How? Use extensions or webpack/grunt or gulp to do it
+Improve API response time // Try to help the backend engineer to make the API faster
+Utilize concurrent HTTP Requests with Promise.all // 
+5 - What is “this”
+This keyword is used to refer to the object that owns it#1 
+const person = {
+	firstName: “John”,
+	lastName: “Doe”,
+	Fn: function () {
+		    Return this;
+		}
+	        };
+	console.log(person.fn()); —> the object : firstName: “John”, lastName: ‘Doe’
+
+const person = {
+	firstName: “John”,
+	lastName: “Doe”,
+	fullName: function () {
+		    Return `${this.firstName} ${this.lastName};
+		}
+	        };
+	console.log(person.fullname()); —> John Doe // using ‘this’ is much more reusable and better   practice 
+
+
+
+	#2 - Alone // Alone ‘this’ refers to the global object
+
+	console.log(this) // Global object (window)
+This will reference the window and all window properties such as onclick, onclose, oncuechange, etc
+The keyword ‘this’ refers to the the object that owns it
+
+	#3 - In a function // 
+A - in a function, ‘this’ refers to the global object
+Function fn() {
+console.log(this);
+}
+B - in a function in strict mode, ‘this’ is undefined // Having strict mode enabled in REACT
+
+‘Use strict’;
+Function fn() {
+console.log(this);
+}
+	
+6 - Difference between Arrow and Regular Functions?
+	#1 - ‘this’ binding | Arrow functions don’t have their own ‘this’
+		Regular Function
+		const person = {
+	firstName: “John”,
+	lastName: “Doe”,
+	fn: function () {
+		    Return this; // ‘person’ object
+		}
+	        };
+
+	#2 - ‘arguments’ keyword | Arrow functions don’t have the arguments object
+		Function fn() {
+		  console.log(arguments);
+		  console.log(arguments[0], arguments[1]);
+		}
+
+	fn(‘frontend’, ‘simplified’)
+7 - Difference between function declaration & function expression?
+	$1 - syntax 
+A - Function declaration: starts with “function” then the function name (funcD)
+B - Function Expression: Anonymous function stored in a variable (funcE)
+
+Function funcD() {
+console.log(“function declaration”)
+	
+let funcE = function() {
+		console.log(“  function expression”);
+	};
+	#2 - Hoisting
+	console.log(funcD()); // function declaration
+	console.log(funcE()); // error
+	function funcD() {
+	   console.log(“function declaration”)’
+	}
+	Let funcE = function () {
+	  console.log(“ function expression”);
+	};
+
+
+8 - setTimeout()
+	What will the code do //
+	setTimeout(() => {
+	   console.log(‘a’);
+	}, 0)
+	console.log(‘b’)
+	console.log(‘c’)
+ setTimeout(() => { console.log('a'); }, 0): This schedules a task to print a, but it doesn't run immediately. It waits until the current code is done, even though the delay is 0.
+console.log('b'): This prints b right away.
+console.log('c'): This prints c right away, right after b.
+So, even though setTimeout is first in the code, it waits. b and c are printed first, then setTimeout finishes its wait and prints a. The output order is b, c, a.
+
