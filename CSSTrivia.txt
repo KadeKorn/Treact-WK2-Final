@@ -1,0 +1,48 @@
+CSS Trivia
+
+What is the Box Model?
+Box that wraps around every single html element
+Includes Margin, Border, Padding, and Content
+Box-sizing: border-box = width and height is = to the content + the padding + the border
+Content-box = just the content in the middle (see inspect and see box)
+What is specificity?
+Specificity is a weight given to a style to determine if it should be applied or not
+Id > class > regular div
+If you have two ids/classes/divs that are the same but have different stylings the one that comes after will have higher specificity
+!important = the highest specificity. 
+How to center a div?
+Display flex, align-items: center, justify-content: center
+Position: absolute, top: 50%, left: 50%, transform: translate(-50%, -50%)
+Position: relative is the parent that position absolute references
+Display: flex on the parent and margin auto on the child
+Display: grid, justify-content: center, align-items: center on the parent
+What’s the difference between ‘div’ and ‘section’?
+Divs are just used to group elements together, doesn’t have a specific meaning
+Sections are used to group elements together that are related to each other
+Sections are typically structured with headings then paragraph text, imgs, etc
+What’s the difference between block, inline and inline-block
+#1 Block
+Starts on a new line and takes up the whole width e.g <p> elements
+#2 - Inline
+Starts on the same line and can’t set the width and height e.g <span> element
+#3 - Inline - block
+Starts on the same line, you’re allowed to set the width and height
+Difference between position relative, absolute, fixed, sticky and static?
+Static elements are positioned by the normal flow the page 
+Relative: respects the flow, but you can use top, bottom, right, left, and such
+Absolute: doesn’t affect the positioning of anything else on the page and is affected by t,b, l ,r and such. 
+Fixed: stays the same, its relative to the screen 
+Sticky: based on the users scroll position
+What is the difference between visibility:hidden and display:none?
+Visibility:hidden keeps the div in the DOM, but keeps it hidden
+Display:none removes it from the DOM
+How do you build a triangle in CSS?
+You set a div’s width and height to 0, border 100px solid transparent and border-(any other them T,B,R,L) then border-top 0
+What are pseudo elements in CSS?
+Used to give element special effects
+::after
+::before
+:hover
+ What are Data Attributes?
+Are used to store data in HTML
+
